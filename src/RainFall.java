@@ -7,7 +7,7 @@ public class RainFall {
         Scanner keyboard = new Scanner(System.in);
 
 
-        System.out.println("Enter amount of years");
+        System.out.print("Please enter the number of years: ");
         String year = keyboard.nextLine();
         int numYear;
         numYear = Integer.parseInt(year);
@@ -15,16 +15,16 @@ public class RainFall {
         int [][] rain = new int [numYear][12];
         for(int years = 0; years < rain.length; years++){
 
+
             for(int month = 0; month < 12; month++){
-                System.out.println("Enter the rain amount for month" + (month) + "for year" + (years+1)+":");
+                System.out.print("Please enter the rainfall amount for month " + (month+1) + ", " + "year " + (years+1)+":");
                 String rainInches = keyboard.nextLine();
                 int numInch;
                 numInch = Integer.parseInt(rainInches);
                 rain [years][month] = numInch;
 
-                while(rain[years][month] <= 0){
-                    System.out.println("Invalid: Input must be of a positive integer starting at 1");
-
+                if(rain[years][month] <= 0){
+                    System.out.println("Invalid: Input must be of a positive integer starting at 1. Try Again ");
 
                 }
             }
@@ -55,23 +55,22 @@ public class RainFall {
                     }
                     total += rain[years][month];
                 }
-                System.out.println("Year" + (years + 1) + "Total Rainfall:" + total);
-                System.out.println("Year" + (years + 1) + " Average Rainfall:" + total/12);
+                System.out.println();
+                System.out.println("The total rainfall for year " + (years + 1) + " is " + total + " inches.");
+                //System.out.println("The total rainfall is " + (grandTotal)+ " inches");
+                System.out.println("Year " + (years + 1) + " Average Rainfall:" + total/12);
                 grandTotal += total;
                 total = 0;
 
             }
-            System.out.println("Total amount of rainfall: " + (grandTotal));
+
+            //System.out.println("The total rainfall is " + (grandTotal)+ " inches");
+
             System.out.println("Average amount of rainfall:" + grandTotal/numYear * 12);
-            System.out.println("Minimum amount of rainfall for month:" + (minimumMonth+1)+"year" + (minimumYear+1));
-            System.out.println("Maximum amount of rainfall for month:" + (maximumMonth+1) + "year" + (maximumYear+1));
+            System.out.println();
 
+            System.out.println("The month with the most rain was month " + (maximumMonth+1) + " year" + (maximumYear+1));
+            System.out.println("The month with the lease rain was month " + (minimumMonth+1)+" year" + (minimumYear+1));
         }
-
-
-
     }
-
-
-
 }
