@@ -57,7 +57,7 @@ public class RainFall {
                 }
                 System.out.println();
                 System.out.println("The total rainfall for year " + (years + 1) + " is " + total + " inches.");
-                //System.out.println("The total rainfall is " + (grandTotal)+ " inches");
+                ////System.out.println("The total rainfall is " + (grandTotal)+ " inches");
                 System.out.println("Year " + (years + 1) + " Average Rainfall:" + total/12);
                 grandTotal += total;
                 total = 0;
