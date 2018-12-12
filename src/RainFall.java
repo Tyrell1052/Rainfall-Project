@@ -66,7 +66,7 @@ public class RainFall {
 
             //System.out.println("The total rainfall is " + (grandTotal)+ " inches");
 
-            System.out.println("Average amount of rainfall:" + grandTotal/numYear * 12);
+            System.out.println("Average amount of rainfall:" + grandTotal/(numYear * 12));
             System.out.println();
 
             System.out.println("The month with the most rain was month " + (maximumMonth+1) + " year" + (maximumYear+1));
